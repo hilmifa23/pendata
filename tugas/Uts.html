@@ -63,6 +63,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'tugas/Uts';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Klasifikasi Naive Bayes Pada Dataset Iris (Tugas 3)" href="Tugas3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -153,9 +154,10 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Tugas2.html">Tugas Pendata Menghitung Jarak Pada Data(Tugas 2)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Tugas3.html">Klasifikasi Naive Bayes Pada Dataset Iris (Tugas 3)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>UTS Penambangan Data</strong></a></li>
 </ul>
 
     </div>
@@ -349,18 +351,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>UTS Penambangan Data</strong></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal"><strong>Soal</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes"><strong>Naive Bayes</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#knn"><strong>KNN</strong></a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#knn"><strong>Knn</strong></a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Kesimpulan</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -371,7 +365,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="section" id="uts-penambangan-data">
+  <div class="tex2jax_ignore mathjax_ignore section" id="uts-penambangan-data">
 <h1><strong>UTS Penambangan Data</strong><a class="headerlink" href="#uts-penambangan-data" title="Permalink to this heading">#</a></h1>
 <p>Nama :M. Hilmi Fajrul Alam</p>
 <p>NIM :210411100175</p>
@@ -415,7 +409,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-b3fdfeb1-c9c6-4487-8a05-c0cf51dfc358">
+  <div id="df-a9ee5aed-1640-4008-8a03-6fc08a66a7e2">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -643,7 +637,7 @@ document.write(`
 </table>
 <p>303 rows × 14 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-b3fdfeb1-c9c6-4487-8a05-c0cf51dfc358')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-a9ee5aed-1640-4008-8a03-6fc08a66a7e2')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -694,12 +688,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-b3fdfeb1-c9c6-4487-8a05-c0cf51dfc358 button.colab-df-convert');
+          document.querySelector('#df-a9ee5aed-1640-4008-8a03-6fc08a66a7e2 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-b3fdfeb1-c9c6-4487-8a05-c0cf51dfc358');
+          const element = document.querySelector('#df-a9ee5aed-1640-4008-8a03-6fc08a66a7e2');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -844,7 +838,7 @@ memory usage: 33.3 KB
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-513c4de1-8375-4e4d-a1d5-344b80c1ea56">
+  <div id="df-30a8b6d9-065b-4111-a6ca-e8478e08f941">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1072,7 +1066,7 @@ memory usage: 33.3 KB
 </table>
 <p>303 rows × 14 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-513c4de1-8375-4e4d-a1d5-344b80c1ea56')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-30a8b6d9-065b-4111-a6ca-e8478e08f941')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -1123,12 +1117,12 @@ memory usage: 33.3 KB
 
       <script>
         const buttonEl =
-          document.querySelector('#df-513c4de1-8375-4e4d-a1d5-344b80c1ea56 button.colab-df-convert');
+          document.querySelector('#df-30a8b6d9-065b-4111-a6ca-e8478e08f941 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-513c4de1-8375-4e4d-a1d5-344b80c1ea56');
+          const element = document.querySelector('#df-30a8b6d9-065b-4111-a6ca-e8478e08f941');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1193,15 +1187,13 @@ memory usage: 33.3 KB
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="kesimpulan">
-<h1>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Permalink to this heading">#</a></h1>
+<p><strong>Kesimpulan</strong></p>
 <blockquote>
 <div><p>Dari hasil yang telah disajikan, dapat disimpulkan bahwa model tersebut memiliki akurasi sebesar 79,00%. Hal ini mengindikasikan bahwa model tersebut dapat memprediksi sekitar 79,00% kasus dengan tepat.</p>
 </div></blockquote>
+</div>
 <div class="section" id="knn">
-<h2><strong>Knn</strong><a class="headerlink" href="#knn" title="Permalink to this heading">#</a></h2>
+<h2><strong>KNN</strong><a class="headerlink" href="#knn" title="Permalink to this heading">#</a></h2>
 <p><strong>1. Import library</strong></p>
 <blockquote>
 <div><p>Langkah pertama import library pandas, numpy, dan sklearn yang diperlukan</p>
@@ -1231,7 +1223,7 @@ memory usage: 33.3 KB
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-d077a0ab-77d8-4238-b5da-6655e77a8656">
+  <div id="df-fcb59024-df1c-441f-b904-6658d3da126e">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1459,7 +1451,7 @@ memory usage: 33.3 KB
 </table>
 <p>303 rows × 14 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-d077a0ab-77d8-4238-b5da-6655e77a8656')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-fcb59024-df1c-441f-b904-6658d3da126e')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -1510,12 +1502,12 @@ memory usage: 33.3 KB
 
       <script>
         const buttonEl =
-          document.querySelector('#df-d077a0ab-77d8-4238-b5da-6655e77a8656 button.colab-df-convert');
+          document.querySelector('#df-fcb59024-df1c-441f-b904-6658d3da126e button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-d077a0ab-77d8-4238-b5da-6655e77a8656');
+          const element = document.querySelector('#df-fcb59024-df1c-441f-b904-6658d3da126e');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1624,7 +1616,7 @@ dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-1964658a-fe6b-4618-bdf4-45178b34d6bf">
+  <div id="df-0dfd88d3-36a0-4316-90a6-f63cc59fc8cb">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1852,7 +1844,7 @@ dtype: int64
 </table>
 <p>303 rows × 14 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-1964658a-fe6b-4618-bdf4-45178b34d6bf')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-0dfd88d3-36a0-4316-90a6-f63cc59fc8cb')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -1903,12 +1895,12 @@ dtype: int64
 
       <script>
         const buttonEl =
-          document.querySelector('#df-1964658a-fe6b-4618-bdf4-45178b34d6bf button.colab-df-convert');
+          document.querySelector('#df-0dfd88d3-36a0-4316-90a6-f63cc59fc8cb button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-1964658a-fe6b-4618-bdf4-45178b34d6bf');
+          const element = document.querySelector('#df-0dfd88d3-36a0-4316-90a6-f63cc59fc8cb');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1970,13 +1962,11 @@ dtype: int64
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id1">
-<h1>Kesimpulan<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<p><strong>Kesimpulan</strong></p>
 <blockquote>
 <div><p>Dari hasil yang telah disajikan, dapat disimpulkan bahwa model KNN memiliki akurasi sebesar 92,11%. Hal ini mengindikasikan bahwa model tersebut dapat memprediksi sekitar 92,11% kasus dengan tepat.</p>
 </div></blockquote>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -2010,6 +2000,15 @@ dtype: int64
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Tugas3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Klasifikasi Naive Bayes Pada Dataset Iris (Tugas 3)</p>
+      </div>
+    </a>
 </div></div>
   
 </div>
@@ -2028,18 +2027,10 @@ dtype: int64
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>UTS Penambangan Data</strong></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal"><strong>Soal</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes"><strong>Naive Bayes</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#knn"><strong>KNN</strong></a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#knn"><strong>Knn</strong></a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Kesimpulan</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>
