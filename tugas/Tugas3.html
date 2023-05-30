@@ -373,7 +373,7 @@ document.write(`
 </div>
 </div>
 <p><strong>Langkah 2</strong></p>
-<p>Pada langkah ini, kita akan mengimpor Iris Flower dataset  dari GithubGist dengan nama file IrisDataset dan menyimpannya ke dalam variabel dataset. Setelah itu kami menetapkan 4 variabel independen ke nilai X dan variabel dependen “Spesies” ke nilai Y. Lima baris pertama dari kumpulan data ditampilkan.</p>
+<p>Pada langkah ini, kita akan mengimpor Iris Flower dataset  dari GithubGist. Setelah itu menetapkan 4 variabel independen ke nilai X dan variabel dependen “Spesies” ke nilai Y. Lima baris pertama dari kumpulan data ditampilkan.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://gist.githubusercontent.com/hilmifa23/188a63a098ee77dd94951bfd1e0f8deb/raw/4c7d12a8d535a72298b2868ae437614ea717e4d8/IrisDataset&#39;</span><span class="p">)</span>
@@ -385,7 +385,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-6b39cfbd-4a1e-436f-a9c8-877fec1a7648">
+  <div id="df-4da9d3d7-f1c8-404b-a9d9-f0c765318d87">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -456,7 +456,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-6b39cfbd-4a1e-436f-a9c8-877fec1a7648')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-4da9d3d7-f1c8-404b-a9d9-f0c765318d87')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -507,12 +507,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-6b39cfbd-4a1e-436f-a9c8-877fec1a7648 button.colab-df-convert');
+          document.querySelector('#df-4da9d3d7-f1c8-404b-a9d9-f0c765318d87 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-6b39cfbd-4a1e-436f-a9c8-877fec1a7648');
+          const element = document.querySelector('#df-4da9d3d7-f1c8-404b-a9d9-f0c765318d87');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -534,7 +534,7 @@ document.write(`
   </div></div>
 </div>
 <p><strong>Langkah 3</strong></p>
-<p>Setelah mendapatkan set data, langkah selanjutnya adalah memisahkan data tersebut menjadi set pelatihan dan set pengujian. Set data ini terdiri dari 150 baris, dengan 50 baris untuk masing-masing dari 3 kelas yang ada. Karena kelas-kelas tersebut disusun secara berurutan, maka perlu dilakukan pemisahan dataset secara acak. Dalam hal ini, digunakan nilai test_size=0,2, artinya 20% dari dataset akan diambil sebagai set pengujian dan 80% sisanya akan digunakan sebagai set pelatihan untuk melatih model klasifikasi Naive Bayes.</p>
+<p>Setelah mendapatkan set data, langkah selanjutnya adalah memisahkan data tersebut menjadi set pelatihan dan set pengujian. Disini digunakan nilai test_size=0,2, artinya 20% dari dataset akan diambil sebagai set pengujian dan 80% sisanya akan digunakan sebagai set pelatihan untuk melatih model klasifikasi Naive Bayes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
@@ -556,7 +556,7 @@ document.write(`
 </div>
 </div>
 <p><strong>Langkah 5</strong></p>
-<p>Pada langkah ini, digunakan kelas GaussianNB dari library sklearn.naive_bayes. Dalam kasus ini, digunakan model Gaussian, meskipun tersedia beberapa model lain seperti Bernoulli, Categorical, dan Multinomial. Untuk melatih model, kita menugaskan kelas GaussianNB ke variabel classifier dan melakukan pelatihan dengan memasukkan nilai X_train dan y_train ke dalamnya.</p>
+<p>Pada langkah ini, digunakan kelas GaussianNB dari library sklearn.naive_bayes. Dalam kasus ini, digunakan model Gaussian. Untuk melatih model, kita menugaskan kelas GaussianNB ke variabel classifier dan melakukan pelatihan dengan memasukkan nilai X_train dan y_train ke dalamnya.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
@@ -578,12 +578,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;setosa&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;virginica&#39;,
-       &#39;setosa&#39;, &#39;virginica&#39;, &#39;virginica&#39;, &#39;setosa&#39;, &#39;virginica&#39;,
-       &#39;virginica&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;,
-       &#39;versicolor&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;virginica&#39;,
-       &#39;virginica&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;setosa&#39;, &#39;versicolor&#39;,
-       &#39;setosa&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;virginica&#39;], dtype=&#39;&lt;U10&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;versicolor&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;virginica&#39;,
+       &#39;versicolor&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;versicolor&#39;,
+       &#39;virginica&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;virginica&#39;,
+       &#39;versicolor&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;versicolor&#39;,
+       &#39;setosa&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;setosa&#39;,
+       &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;virginica&#39;],
+      dtype=&#39;&lt;U10&#39;)
 </pre></div>
 </div>
 </div>
@@ -604,9 +605,9 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy :  0.9666666666666667
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[10,  0,  0],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[12,  0,  0],
        [ 0,  9,  0],
-       [ 0,  1, 10]])
+       [ 0,  1,  8]])
 </pre></div>
 </div>
 </div>
@@ -623,7 +624,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-2a1dd5db-7acf-4c4b-80a3-6998ce2e78b8">
+  <div id="df-2bd94ce9-3733-4c0f-adc6-296b38cd0ab4">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -650,13 +651,13 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>2</th>
@@ -665,8 +666,8 @@ document.write(`
     </tr>
     <tr>
       <th>3</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>4</th>
@@ -675,18 +676,18 @@ document.write(`
     </tr>
     <tr>
       <th>5</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>8</th>
@@ -695,8 +696,8 @@ document.write(`
     </tr>
     <tr>
       <th>9</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>10</th>
@@ -710,18 +711,18 @@ document.write(`
     </tr>
     <tr>
       <th>12</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>13</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>15</th>
@@ -730,58 +731,58 @@ document.write(`
     </tr>
     <tr>
       <th>16</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>17</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>19</th>
       <td>virginica</td>
-      <td>virginica</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>20</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>21</th>
-      <td>virginica</td>
+      <td>versicolor</td>
       <td>versicolor</td>
     </tr>
     <tr>
       <th>22</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>23</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>24</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>25</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>26</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>27</th>
@@ -790,8 +791,8 @@ document.write(`
     </tr>
     <tr>
       <th>28</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>29</th>
@@ -801,7 +802,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-2a1dd5db-7acf-4c4b-80a3-6998ce2e78b8')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-2bd94ce9-3733-4c0f-adc6-296b38cd0ab4')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -852,12 +853,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-2a1dd5db-7acf-4c4b-80a3-6998ce2e78b8 button.colab-df-convert');
+          document.querySelector('#df-2bd94ce9-3733-4c0f-adc6-296b38cd0ab4 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-2a1dd5db-7acf-4c4b-80a3-6998ce2e78b8');
+          const element = document.querySelector('#df-2bd94ce9-3733-4c0f-adc6-296b38cd0ab4');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});

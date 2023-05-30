@@ -361,6 +361,7 @@ document.write(`
 <p>NIM :210411100175</p>
 <p>Kelas :Penambangan Data-C</p>
 <p><strong>1. Import library</strong></p>
+<p>Langkah pertama adalah mengimport library yang dibutuhkan</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -377,6 +378,7 @@ document.write(`
 </div>
 </div>
 <p><strong>2. import data</strong></p>
+<p>Langkah kedua adalah mengimport data iris</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://gist.githubusercontent.com/hilmifa23/188a63a098ee77dd94951bfd1e0f8deb/raw/4c7d12a8d535a72298b2868ae437614ea717e4d8/IrisDataset&#39;</span><span class="p">)</span>
@@ -387,7 +389,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-e55ca003-75df-46fd-962a-388481320350">
+  <div id="df-87b0b783-0f6d-40c8-a674-fba6cc74f5d7">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -507,7 +509,7 @@ document.write(`
 </table>
 <p>150 rows × 5 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-e55ca003-75df-46fd-962a-388481320350')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-87b0b783-0f6d-40c8-a674-fba6cc74f5d7')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -558,12 +560,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-e55ca003-75df-46fd-962a-388481320350 button.colab-df-convert');
+          document.querySelector('#df-87b0b783-0f6d-40c8-a674-fba6cc74f5d7 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-e55ca003-75df-46fd-962a-388481320350');
+          const element = document.querySelector('#df-87b0b783-0f6d-40c8-a674-fba6cc74f5d7');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -585,6 +587,7 @@ document.write(`
   </div></div>
 </div>
 <p><strong>3. Mengecek nilai</strong></p>
+<p>Langkah ketiga adalah mengecek nilai yang kosong</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_copy</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -604,6 +607,7 @@ dtype: int64
 </div>
 </div>
 <p><strong>4. Mengganti nilai</strong></p>
+<p>Langkah keempat adalah mengganti nilai (?) menjadi nilai kosong</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_copy</span> <span class="o">=</span> <span class="n">df_copy</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;?&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
@@ -612,6 +616,7 @@ dtype: int64
 </div>
 </div>
 <p><strong>5. Mengecek nilai</strong></p>
+<p>Langkah kelima adalah mengecek lagi apakah ada nlai yang kosong</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_copy</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -630,6 +635,7 @@ dtype: int64
 </div>
 </div>
 <p><strong>6. Mengecek tipe data</strong></p>
+<p>Langkah keenam adalah melihat type data pada fitur, jika type datanya bukan numerik atau float maka perlu diganti type datanya</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_copy</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -654,6 +660,7 @@ memory usage: 6.0+ KB
 </div>
 </div>
 <p><strong>7. Memisahkan fitur dan label target</strong></p>
+<p>Langkag ketujuh adalah memisahkan fitur dan label target</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">df_copy</span><span class="p">[[</span><span class="s1">&#39;sepal_length&#39;</span><span class="p">,</span> <span class="s1">&#39;sepal_width&#39;</span><span class="p">,</span> <span class="s1">&#39;petal_length&#39;</span><span class="p">,</span> <span class="s1">&#39;petal_width&#39;</span><span class="p">]]</span>
@@ -663,6 +670,7 @@ memory usage: 6.0+ KB
 </div>
 </div>
 <p><strong>8. Membagi dataset menjadi data training dan data testing (0.8/0.2)</strong></p>
+<p>Langkah kedelapan adalah membagi dataset menjadi data training dan testing</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span>
@@ -671,6 +679,7 @@ memory usage: 6.0+ KB
 </div>
 </div>
 <p><strong>9. Membuat model Decision Tree dengan metode impurity criterion Gini</strong></p>
+<p>Langkah sembilan adalah embuat model Decision Tree dengan metode impurity criterion Gini</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># membuat klasifikasi Decision Tree dengan kedalaman maksimum 3 dan kriteria pemisahan (splitting) Gini impurity.</span>
