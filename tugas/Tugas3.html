@@ -161,6 +161,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Klasifikasi Naive Bayes Pada Dataset Iris (Tugas 3)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Uts.html">UTS Penambangan Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Tugas4.html">Tugas Decision Tree (Tugas 4)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KNN_dan_PCA.html">KNN dan PCA</a></li>
+
+
 </ul>
 
     </div>
@@ -362,7 +365,7 @@ document.write(`
 <p>NIM :210411100175</p>
 <p>Kelas :Penambangan Data-C</p>
 <p><strong>Langkah 1</strong></p>
-<p>Langkah pertama yaitu mengimpor libraries yaitu NumPy, Matplotlib, dan Pandas.</p>
+<p>Langkah pertama yaitu mengimpor library yang diperlukan.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -373,7 +376,7 @@ document.write(`
 </div>
 </div>
 <p><strong>Langkah 2</strong></p>
-<p>Pada langkah ini, kita akan mengimpor Iris Flower dataset  dari GithubGist. Setelah itu menetapkan 4 variabel independen ke nilai X dan variabel dependen “Spesies” ke nilai Y. Lima baris pertama dari kumpulan data ditampilkan.</p>
+<p>Langkah kedua adalah mengimpor data Iris. Setelah itu menetapkan 4 variabel independen ke nilai X dan variabel dependen “Spesies” ke nilai Y.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://gist.githubusercontent.com/hilmifa23/188a63a098ee77dd94951bfd1e0f8deb/raw/4c7d12a8d535a72298b2868ae437614ea717e4d8/IrisDataset&#39;</span><span class="p">)</span>
@@ -385,7 +388,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-4da9d3d7-f1c8-404b-a9d9-f0c765318d87">
+  <div id="df-3e0b651e-7b8c-451c-a471-30b3f6512a14">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -456,7 +459,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-4da9d3d7-f1c8-404b-a9d9-f0c765318d87')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-3e0b651e-7b8c-451c-a471-30b3f6512a14')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -507,12 +510,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-4da9d3d7-f1c8-404b-a9d9-f0c765318d87 button.colab-df-convert');
+          document.querySelector('#df-3e0b651e-7b8c-451c-a471-30b3f6512a14 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-4da9d3d7-f1c8-404b-a9d9-f0c765318d87');
+          const element = document.querySelector('#df-3e0b651e-7b8c-451c-a471-30b3f6512a14');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -534,7 +537,7 @@ document.write(`
   </div></div>
 </div>
 <p><strong>Langkah 3</strong></p>
-<p>Setelah mendapatkan set data, langkah selanjutnya adalah memisahkan data tersebut menjadi set pelatihan dan set pengujian. Disini digunakan nilai test_size=0,2, artinya 20% dari dataset akan diambil sebagai set pengujian dan 80% sisanya akan digunakan sebagai set pelatihan untuk melatih model klasifikasi Naive Bayes.</p>
+<p>Langkah ketiga adalah memisahkan data tersebut menjadi set pelatihan dan set pengujian. Digunakan nilai test_size=0,2 yang artinya 20% dari dataset akan diambil sebagai set pengujian dan 80% sisanya akan digunakan sebagai set pelatihan.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
@@ -544,7 +547,7 @@ document.write(`
 </div>
 </div>
 <p><strong>Langkah 4</strong></p>
-<p>Untuk meningkatkan kecepatan program, dataset diubah menjadi rentang yang lebih kecil dengan menggunakan opsi Feature Scaling. Dalam proses ini, baik nilai X_train maupun X_test akan diubah menjadi nilai yang lebih kecil.</p>
+<p>Langkah keempat dataset diubah menjadi rentang yang lebih kecil dengan menggunakan opsi Feature Scaling.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
@@ -569,7 +572,7 @@ document.write(`
 <div class="output text_html"><style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>GaussianNB()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">GaussianNB</label><div class="sk-toggleable__content"><pre>GaussianNB()</pre></div></div></div></div></div></div></div>
 </div>
 <p><strong>Langkah 6</strong></p>
-<p>Setelah proses pelatihan model selesai, langkah selanjutnya adalah melakukan prediksi nilai pada set pengujian menggunakan classifier.predict(), dan hasil prediksi akan disimpan ke dalam variabel y_pred.</p>
+<p>Langkah keenam adalah melakukan prediksi nilai pada set pengujian menggunakan classifier.predict(), dan hasil prediksi akan disimpan ke dalam variabel y_pred.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span> 
@@ -578,13 +581,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;versicolor&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;virginica&#39;,
-       &#39;versicolor&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;versicolor&#39;,
-       &#39;virginica&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;virginica&#39;,
-       &#39;versicolor&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;versicolor&#39;,
-       &#39;setosa&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;setosa&#39;,
-       &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;virginica&#39;],
-      dtype=&#39;&lt;U10&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;virginica&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;virginica&#39;,
+       &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39;,
+       &#39;setosa&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;,
+       &#39;versicolor&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;setosa&#39;,
+       &#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;,
+       &#39;versicolor&#39;, &#39;virginica&#39;, &#39;virginica&#39;, &#39;versicolor&#39;], dtype=&#39;&lt;U10&#39;)
 </pre></div>
 </div>
 </div>
@@ -605,8 +607,8 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy :  0.9666666666666667
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[12,  0,  0],
-       [ 0,  9,  0],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 9,  0,  0],
+       [ 0, 12,  0],
        [ 0,  1,  8]])
 </pre></div>
 </div>
@@ -624,7 +626,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-2bd94ce9-3733-4c0f-adc6-296b38cd0ab4">
+  <div id="df-747c7c0e-7717-41d0-8c3b-07128a7bff94">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -651,13 +653,13 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>2</th>
@@ -666,8 +668,8 @@ document.write(`
     </tr>
     <tr>
       <th>3</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>4</th>
@@ -676,13 +678,13 @@ document.write(`
     </tr>
     <tr>
       <th>5</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>7</th>
@@ -691,18 +693,18 @@ document.write(`
     </tr>
     <tr>
       <th>8</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>11</th>
@@ -711,18 +713,18 @@ document.write(`
     </tr>
     <tr>
       <th>12</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>13</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>15</th>
@@ -736,18 +738,18 @@ document.write(`
     </tr>
     <tr>
       <th>17</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>19</th>
-      <td>virginica</td>
-      <td>versicolor</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>20</th>
@@ -756,8 +758,8 @@ document.write(`
     </tr>
     <tr>
       <th>21</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>22</th>
@@ -771,8 +773,8 @@ document.write(`
     </tr>
     <tr>
       <th>24</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>25</th>
@@ -781,13 +783,13 @@ document.write(`
     </tr>
     <tr>
       <th>26</th>
-      <td>versicolor</td>
+      <td>virginica</td>
       <td>versicolor</td>
     </tr>
     <tr>
       <th>27</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>28</th>
@@ -796,13 +798,13 @@ document.write(`
     </tr>
     <tr>
       <th>29</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-2bd94ce9-3733-4c0f-adc6-296b38cd0ab4')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-747c7c0e-7717-41d0-8c3b-07128a7bff94')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -853,12 +855,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-2bd94ce9-3733-4c0f-adc6-296b38cd0ab4 button.colab-df-convert');
+          document.querySelector('#df-747c7c0e-7717-41d0-8c3b-07128a7bff94 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-2bd94ce9-3733-4c0f-adc6-296b38cd0ab4');
+          const element = document.querySelector('#df-747c7c0e-7717-41d0-8c3b-07128a7bff94');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
